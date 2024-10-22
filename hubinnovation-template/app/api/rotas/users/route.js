@@ -18,10 +18,10 @@ export async function DELETE(req) {
     const usuarioAlvo = data.find(u => u.id === userId);
 
     if (usuarioAlvo) {
-        // Filtra as senhas para remover a que tem o ID especificado
+        
         usuarioAlvo.passwords = usuarioAlvo.passwords.filter(p => p.id !== passwordId);
 
-        // Salva o novo JSON com a senha removida
+        
         await writeJsonFile(data);
         return NextResponse.json({ message: 'Senha excluída com sucesso!', status: true });
     }

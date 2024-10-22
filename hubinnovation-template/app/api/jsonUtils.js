@@ -9,13 +9,13 @@ const filePath = isVercel
 
 export async function readJsonFile() {
     try {
-        // Verifica se o arquivo existe antes de tentar ler
+        
         if (fs.existsSync(filePath)) {
             const jsonData = fs.readFileSync(filePath, 'utf-8');
             return JSON.parse(jsonData);
         } else {
             console.warn("File does not exist, returning empty array.");
-            return []; // Retorna um array vazio se o arquivo não existir
+            return []; 
         }
     } catch (error) {
         console.error("Error reading JSON file:", error);

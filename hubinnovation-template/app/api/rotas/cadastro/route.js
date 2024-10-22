@@ -3,7 +3,6 @@ import { readJsonFile, writeJsonFile } from '../../jsonUtils';
 
 
 function generatePasswordId(passwords) {
-    // Se já existirem senhas, pega o maior ID existente e adiciona 1
     const maxId = passwords.length > 0 ? Math.max(...passwords.map(p => p.id || 0)) : 0;
     return maxId + 1;
 }
